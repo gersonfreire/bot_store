@@ -39,7 +39,7 @@ Shopping:
 
 Support:
 /support - Request to talk with a support representative
-/end_support - End your support session
+/end\_support - End your support session
 
 General:
 /help - Show this help message
