@@ -1,5 +1,12 @@
+import sys
+import os
+
+# Add the project directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, LabeledPrice
 from telegram.ext import ContextTypes, CommandHandler, CallbackQueryHandler, PreCheckoutQueryHandler, MessageHandler, filters
+
 from database.store import Store
 
 async def view_products(update: Update, context: ContextTypes.DEFAULT_TYPE):
