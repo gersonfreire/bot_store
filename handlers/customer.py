@@ -10,7 +10,7 @@ from telegram.ext import ContextTypes, CommandHandler, CallbackQueryHandler, Pre
 from database.store import Store
 
 async def view_products(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    store: Store = context.bot_data.get('store', Store())
+    store: Store = context.bot_data.get('store', Store())  
     
     if store or not store.products:
         await update.message.reply_text("No products available.")
