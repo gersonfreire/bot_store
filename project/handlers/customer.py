@@ -1,5 +1,5 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, LabeledPrice
-from telegram.ext import ContextTypes, CommandHandler, CallbackQueryHandler, PreCheckoutQueryHandler
+from telegram.ext import ContextTypes, CommandHandler, CallbackQueryHandler, PreCheckoutQueryHandler, MessageHandler, filters
 from database.store import Store
 
 async def view_products(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -130,4 +130,6 @@ def register_customer_handlers(application):
     application.add_handler(CommandHandler('pay', process_payment))
     application.add_handler(CallbackQueryHandler(handle_cart_callback))
     application.add_handler(PreCheckoutQueryHandler(precheckout_callback))
+    
+    # name 'MessageHandler' is not defined
     application.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment_callback))
